@@ -1,25 +1,26 @@
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes, Model, Sequelize } from 'sequelize';
 import { sequelize } from '../database/db'
 
 class Ticket extends Model {};
 
 Ticket.init(
-    {
+    {     
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
             allowNull: false,
         },
-        ticketTitle: {
+        title: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        ticketDescription: {
+        description: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
         userId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
             allowNull: false,
             references: {
                 model: 'Users',
