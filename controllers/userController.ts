@@ -38,7 +38,7 @@ export const updateUser = async (req: Request, res: Response): Promise<void> => 
   const id = req.params.id;
   try {
     const user = await User.findByPk(id);
-    user?.update({ userName: req.body.userName , password: req.body.password, tipo: req. body.tipo });
+    user?.update({ userName: req.body.userName , password: req.body.password, tipo: req.body.tipo });
     user?.save();
     res.status(201).json(user);
   } catch (error) {
