@@ -1,6 +1,7 @@
 
 import { Request, Response } from 'express'
 import User from '../models/User'
+import sequelize, { Sequelize } from 'sequelize/lib/sequelize';
 
 export const getUsers = async (req: Request, res: Response): Promise<void>  => {
   try {
@@ -30,5 +31,17 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao criar usuário '});
+  }
+}
+
+export const updateUser = async (req: Request, res: Response): Promise<void> => {
+  const id = req.params.id;
+  try {
+    const user = await User.findByPk(id);
+    user?.update({ userName: req.body.userName , password: req.body.password, tipo: req. body.tipo });
+    user?.save();
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao modificar usuário '});
   }
 }
