@@ -7,8 +7,18 @@ export const getUsers = async (req: Request, res: Response): Promise<void>  => {
     const users = await User.findAll();
     res.status(200).json(users);
   } catch (error) {
-    console.error(error)
+    console.error(error);
     res.status(500).json({ error: 'Erro ao buscar usuários '});
+  }
+};
+
+export const getUserById = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const user = await User.findByPk(req.params.id);
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao buscar usuário '});
   }
 };
 
