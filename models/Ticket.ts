@@ -1,5 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 import { sequelize } from '../database/db'
+import User from './User';
 
 class Ticket extends Model {};
 
@@ -19,14 +20,6 @@ Ticket.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        userId: {
-            type: DataTypes.UUID,
-            allowNull: false,
-            references: {
-                model: 'Users',
-                key: 'id'
-            }
-        }
     },
     {
         sequelize,

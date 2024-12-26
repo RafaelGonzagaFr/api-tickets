@@ -24,9 +24,9 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 };
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {
-  const { userName, password, tipo } = req.body;
+  const { username, password, tipo } = req.body;
   try {
-    const user = await User.create({ userName, password, tipo });
+    const user = await User.create({ username, password, tipo });
     res.status(201).json(user);
   } catch (error) {
     console.error(error);

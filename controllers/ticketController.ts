@@ -1,5 +1,7 @@
 import { Request, Response } from 'express'
 import Ticket from '../models/Ticket'
+import { sequelize } from '../database/db';
+import { QueryTypes } from 'sequelize';
 
 export const getTickets = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -11,13 +13,28 @@ export const getTickets = async (req: Request, res: Response): Promise<void> => 
     }
 };
 
-export const createTicket = async (req: Request, res: Response): Promise<void> => {
-    const { title, description, userId } = req.body;
+export const getTicketsByUser = async (req: Request, res: Response): Promise<void> => {
+    const UserId = req.params.id;
     try {
-        const ticket = await Ticket.create({ title, description, userId });
+        const tickets = await sequelize.query('SELECT * FROM "Tickets" WHERE "UserId" = ?', {
+            replacements: [UserId],
+            type: QueryTypes.SELECT
+        });
+        res.status(200).json(tickets);
+    } catch (error){
+        console.error(error);
+        res.status(500).json({ error: 'Erro ao achar tickets' });
+    }
+
+}
+
+export const createTicket = async (req: Request, res: Response): Promise<void> => {
+    const { title, description, UserId } = req.body;
+    try {
+        const ticket = await Ticket.create({ title, description, UserId });
         res.status(201).json(ticket);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Erro ao criar ticket ' });
+        res.status(500).json({ error: 'Erro ao criar ticket' });
     }
 }

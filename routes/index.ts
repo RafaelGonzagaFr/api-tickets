@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createUser, getUserById, getUsers, updateUser } from "../controllers/userController";
-import { createTicket, getTickets } from "../controllers/ticketController";
+import { createTicket, getTickets, getTicketsByUser } from "../controllers/ticketController";
 
 const router = Router();
 
@@ -10,6 +10,8 @@ router.post("/users", createUser);
 router.put("/users/:id", updateUser);
 
 router.get("/tickets", getTickets);
+router.get("/tickets/:id", getTicketsByUser);
 router.post("/tickets", createTicket);
+
 
 export default router;

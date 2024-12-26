@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
 import { sequelize } from '../database/db'
+import Ticket from './Ticket';
 
 class User extends Model {};
 
@@ -11,7 +12,7 @@ User.init(
       primaryKey: true,
       allowNull: false,
     },
-    userName: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -29,5 +30,8 @@ User.init(
     modelName: 'User',
   },
 );
+
+Ticket.belongsTo(User)
+User.hasMany(Ticket)
 
 export default User;
