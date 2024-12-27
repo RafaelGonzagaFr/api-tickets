@@ -16,10 +16,11 @@ export const getTickets = async (req: Request, res: Response): Promise<void> => 
 export const getTicketsByUser = async (req: Request, res: Response): Promise<void> => {
     const UserId = req.params.id;
     try {
-        const tickets = await sequelize.query('SELECT * FROM "Tickets" WHERE "UserId" = ?', {
-            replacements: [UserId],
-            type: QueryTypes.SELECT
-        });
+        const tickets = await Ticket.findAll({
+            where: {
+                UserId: UserId,
+            }
+        })
         res.status(200).json(tickets);
     } catch (error){
         console.error(error);

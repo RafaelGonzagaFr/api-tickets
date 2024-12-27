@@ -7,8 +7,8 @@ class Ticket extends Model {};
 Ticket.init(
     {     
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: DataTypes.INTEGER,
+            defaultValue: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
         },
