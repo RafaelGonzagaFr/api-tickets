@@ -5,6 +5,7 @@ import { sequelize } from "../database/db";
 import Ticket_User from "../models/Ticket_User";
 import { createRelationship, getRelationships } from "../controllers/ticketUserController";
 import User from "../models/User";
+import Ticket from "../models/Ticket";
 
 const router = Router();
 
@@ -19,8 +20,5 @@ router.post("/tickets", createTicket);
 
 router.get("/ticket_user", getRelationships);
 router.post("/ticket_user", createRelationship);
-
-sequelize.sync({ force: true });
-console.log('All models were synchronized successfully.');
 
 export default router;
