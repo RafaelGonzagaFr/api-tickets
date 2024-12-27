@@ -21,4 +21,4 @@ Ticket_User.init (
 Ticket_User.belongsTo(User)
 Ticket_User.belongsTo(Ticket)
 
-export default Ticket_User;
+export default Ticket_User; 
