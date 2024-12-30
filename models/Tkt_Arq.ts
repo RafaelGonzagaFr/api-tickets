@@ -9,13 +9,15 @@ Tkt_Arq.init (
     arq_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'arquivo'
+        model: 'arquivos',
+        key: "id",
       }
     },
     tkt_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'ticket'
+        model: 'tickets',
+        key: "id",
       }
     },
   },

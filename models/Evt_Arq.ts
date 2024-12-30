@@ -11,13 +11,15 @@ Evt_Arq.init (
     arq_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Arquivo',
+        model: 'arquivos',
+        key: "id",
       }
     },
     evt_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Evento'
+        model: 'eventos',
+        key: "id",
       }
     }
   },

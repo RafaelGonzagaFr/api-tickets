@@ -7,19 +7,21 @@ class User_Tkt extends Model {};
 
 User_Tkt.init (
   {
-    user_id: {
+    ut_usr_username: {
       type: DataTypes.STRING,
       references: {
-        model: 'user',
+        model: 'users',
+        key: 'username',
       }
     },
-    tkt_id: {
+    ut_tkt_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'ticket',
+        model: 'tickets',
+        key: "id",
       }
     },
-    ticket_user_tp: {
+    ut_tp: {
       type: DataTypes.TEXT,
       allowNull: false,
     },

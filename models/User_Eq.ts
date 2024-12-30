@@ -9,14 +9,14 @@ User_Eq.init(
     user_id: {
       type: DataTypes.STRING,
       references: {
-        model: 'User',
+        model: 'users',
         key: "username"
       }
     },
     equipe_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Equipe',
+        model: 'equipes',
         key: "id",
       }
     }

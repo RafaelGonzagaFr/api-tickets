@@ -13,6 +13,8 @@ import Grupo from "../models/Grupo";
 import Task from "../models/Task";
 import Unidade from "../models/Unidade";
 import Evt_Arq from "../models/Evt_Arq";
+import Tkt_Arq from "../models/Tkt_Arq";
+import User_Eq from "../models/User_Eq";
 
 const router = Router();
 
@@ -28,7 +30,7 @@ router.post("/tickets", createTicket);
 router.get("/ticket_user", getRelationships);
 router.post("/ticket_user", createRelationship);
 
-Evt_Arq.sync();
+User_Eq.sync();
 console.log('All tables dropped!');
 
 export default router;
