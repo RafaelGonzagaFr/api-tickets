@@ -1,4 +1,4 @@
-import Ticket_User from "../models/Ticket_User"
+import Ticket_User from "../models/User_Tkt"
 import { Request, Response } from 'express'
 
 

@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import Ticket from "../models/Ticket";
 
-export const sequelize = new Sequelize('postgresql://postgres:DuJaezQlmRpNEZggDHHwRFiPxGOnSIBV@autorack.proxy.rlwy.net:53631/railway');
+export const sequelize = new Sequelize('postgresql://postgres:ixjiOAIpIaHffWerNBYmKxbVUDiUodny@junction.proxy.rlwy.net:18303/railway');
 
 export const connectDB = async () => {
   try {

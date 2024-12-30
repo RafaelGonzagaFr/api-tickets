@@ -1,39 +1,31 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 import { sequelize } from '../database/db'
 import User from './User';
-import Unidade from './Unidade';
-import Equipe from './Equipe';
+import Grupo from './Grupo';
 
-class Ticket extends Model {};
+class Unidade extends Model {};
 
-Ticket.init(
+Unidade.init(
     {     
-        titulo: {
+        nome: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        descricao: {
+        grupo: {
             type: DataTypes.TEXT,
-            allowNull: false,
-        },
-        data: {
-            type: DataTypes.DATE,
             allowNull: false,
         },
         status: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        crticidade: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
     },
     {
         sequelize,
-        modelName: 'ticket'
+        modelName: 'unidade'
     }
 )
 
 
-export default Ticket;
+
+export default Unidade;
