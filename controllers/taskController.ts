@@ -23,7 +23,7 @@ export const createTask = async (req: Request, res: Response): Promise<void> => 
   }
 }
 
-export const getGrupoById = async (req: Request, res: Response): Promise<void> => {
+export const getTaskById = async (req: Request, res: Response): Promise<void> => {
   const id = req.params.id;
 
   try {
