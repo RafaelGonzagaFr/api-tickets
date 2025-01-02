@@ -1,8 +1,5 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/db";
-import User from "./User";
-import Ticket from "./Ticket";
-
 
 class Evento extends Model {};
 

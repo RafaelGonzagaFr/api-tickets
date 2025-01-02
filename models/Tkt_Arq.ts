@@ -1,6 +1,5 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/db";
-import Arquivo from "./Arquivo";
 
 class Tkt_Arq extends Model {}
 

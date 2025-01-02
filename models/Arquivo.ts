@@ -1,6 +1,5 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/db";
-import User from "./User";
 
 class Arquivo extends Model {}
 

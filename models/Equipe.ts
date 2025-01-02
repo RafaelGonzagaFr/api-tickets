@@ -1,7 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/db";
 
-
 class Equipe extends Model {}
 
 Equipe.init(

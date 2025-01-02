@@ -1,8 +1,5 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/db";
-import Arquivo from "./Arquivo";
-import Evento from "./Evento";
-
 
 class Evt_Arq extends Model {};
 

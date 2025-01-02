@@ -1,7 +1,5 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 import { sequelize } from '../database/db'
-import User from './User';
-import Grupo from './Grupo';
 
 class Unidade extends Model {};
 

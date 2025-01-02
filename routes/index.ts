@@ -1,33 +1,30 @@
 import { Router } from "express";
 import { createUser, getUserById, getUsers, updateUser } from "../controllers/userController";
 import { createTicket, getTickets, getTicketsByUser } from "../controllers/ticketController";
-import { sequelize } from "../database/db";
-import Ticket_User from "../models/User_Tkt";
 import { createRelationship, getRelationships } from "../controllers/ticketUserController";
-import User from "../models/User";
-import Ticket from "../models/Ticket";
-import Arquivo from "../models/Arquivo";
-import Equipe from "../models/Equipe";
-import Evento from "../models/Evento";
-import Grupo from "../models/Grupo";
-import Task from "../models/Task";
-import Unidade from "../models/Unidade";
-import Evt_Arq from "../models/Evt_Arq";
-import Tkt_Arq from "../models/Tkt_Arq";
-import User_Eq from "../models/User_Eq";
+import { createGrupo, getGrupoById, getGrupos, updateGrupo } from "../controllers/grupoController";
 
 const router = Router();
 
+//Rotas de usuário
 router.get("/users", getUsers);
 router.get("/users/:id", getUserById);
 router.post("/users", createUser);
 router.put("/users/:id", updateUser);
 
+//Rotas de ticket
 router.get("/tickets", getTickets);
 router.get("/tickets/:id", getTicketsByUser);
 router.post("/tickets", createTicket);
 
+//Rotas de Relacionamentos (ticket - usuário)
 router.get("/ticket_user", getRelationships);
 router.post("/ticket_user", createRelationship);
+
+//Rotas de controller
+router.get("/grupos", getGrupos);
+router.get("/grupos/:id", getGrupoById);
+router.post("/grupos", createGrupo);
+router.put("/grupos/:id", updateGrupo);
 
 export default router;
