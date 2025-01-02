@@ -12,10 +12,10 @@ export const getEventos = async (req: Request, res: Response): Promise<void>  =>
 };
 
 export const createEvento = async (req: Request, res: Response): Promise<void> => {
-  const { descricao, tipo, data, user_id_dst }  = req.body;
+  const { descricao, tipo, data, user_id_dst, ticketId }  = req.body;
 
   try {
-      const evento = await Evento.create({ descricao, tipo, data, user_id_dst });
+      const evento = await Evento.create({ descricao, tipo, data, user_id_dst, ticketId });
       res.status(201).json(evento);
   } catch (error) {
       console.error(error);

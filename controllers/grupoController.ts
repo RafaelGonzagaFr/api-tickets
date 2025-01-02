@@ -12,10 +12,10 @@ export const getGrupos = async (req: Request, res: Response): Promise<void>  => 
 };
 
 export const createGrupo = async (req: Request, res: Response): Promise<void> => {
-  const nome  = req.body;
+  const { nome, unidadeId }  = req.body;
 
   try {
-      const grupo = await Grupo.create({ nome });
+      const grupo = await Grupo.create({ nome, unidadeId });
       res.status(201).json(grupo);
   } catch (error) {
       console.error(error);

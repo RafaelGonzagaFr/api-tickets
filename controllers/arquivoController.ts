@@ -12,10 +12,10 @@ export const getArquivo = async (req: Request, res: Response): Promise<void>  =>
 };
 
 export const createArquivo = async (req: Request, res: Response): Promise<void> => {
-  const { descricao, extensao, metadata, data }  = req.body;
+  const { descricao, extensao, metadata, data, username }  = req.body;
 
   try {
-      const arquivo = await Arquivo.create({ descricao, extensao, metadata, data });
+      const arquivo = await Arquivo.create({ descricao, extensao, metadata, data, username });
       res.status(201).json(arquivo);
   } catch (error) {
       console.error(error);
