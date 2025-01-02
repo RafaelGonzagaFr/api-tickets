@@ -30,7 +30,4 @@ router.post("/tickets", createTicket);
 router.get("/ticket_user", getRelationships);
 router.post("/ticket_user", createRelationship);
 
-User_Eq.sync();
-console.log('All tables dropped!');
-
 export default router;
