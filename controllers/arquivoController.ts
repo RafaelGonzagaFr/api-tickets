@@ -1,7 +1,7 @@
 import Arquivo from "../models/Arquivo"
 import { Request, Response } from 'express'
 
-export const getEventos = async (req: Request, res: Response): Promise<void>  => {
+export const getArquivo = async (req: Request, res: Response): Promise<void>  => {
     try {
       const eventos = await Arquivo.findAll();
       res.status(200).json(eventos);
@@ -11,7 +11,7 @@ export const getEventos = async (req: Request, res: Response): Promise<void>  =>
     }
 };
 
-export const createGrupo = async (req: Request, res: Response): Promise<void> => {
+export const createArquivo = async (req: Request, res: Response): Promise<void> => {
   const { descricao, extensao, metadata, data }  = req.body;
 
   try {
@@ -23,7 +23,7 @@ export const createGrupo = async (req: Request, res: Response): Promise<void> =>
   }
 }
 
-export const getGrupoById = async (req: Request, res: Response): Promise<void> => {
+export const getArquivoById = async (req: Request, res: Response): Promise<void> => {
   const id = req.params.id;
 
   try {

@@ -11,7 +11,7 @@ export const getEventos = async (req: Request, res: Response): Promise<void>  =>
     }
 };
 
-export const createGrupo = async (req: Request, res: Response): Promise<void> => {
+export const createEvento = async (req: Request, res: Response): Promise<void> => {
   const { descricao, tipo, data, user_id_dst }  = req.body;
 
   try {
@@ -23,7 +23,7 @@ export const createGrupo = async (req: Request, res: Response): Promise<void> =>
   }
 }
 
-export const getGrupoById = async (req: Request, res: Response): Promise<void> => {
+export const getEventoById = async (req: Request, res: Response): Promise<void> => {
   const id = req.params.id;
 
   try {
