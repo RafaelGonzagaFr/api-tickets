@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { createUser, getUserById, getUsers, updateUser } from "../controllers/userController";
 import { createTicket, getTickets, getTicketsByUser } from "../controllers/ticketController";
-import { createRelationship, getRelationships } from "../controllers/ticketUserController";
+import { createUserTicket, getUserTicket } from "../controllers/userTicketController";
 import { createGrupo, getGrupoById, getGrupos, updateGrupo } from "../controllers/grupoController";
 import { createTask, getTaskById, getTasks } from "../controllers/taskController";
 import { createEvento, getEventoById, getEventos } from "../controllers/eventoController";
@@ -25,8 +25,8 @@ router.get("/tickets/:id", getTicketsByUser);
 router.post("/tickets", createTicket);
 
 //Rotas de Relacionamentos (ticket - usuário)
-router.get("/ticket_user", getRelationships);
-router.post("/ticket_user", createRelationship);
+router.get("/ticket_user", getUserTicket);
+router.post("/ticket_user", createUserTicket);
 
 //Rotas de grupos
 router.get("/grupos", getGrupos);

@@ -8,7 +8,7 @@ export const getTktArq = async (req: Request, res: Response): Promise<void>  => 
       res.status(200).json(tktArq);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: 'Erro ao buscar arquivo e evento' });
+      res.status(500).json({ error: 'Erro ao buscar arquivo e ticket' });
     }
 };
 
@@ -20,6 +20,6 @@ export const createTktArq = async (req: Request, res: Response): Promise<void> =
       res.status(201).json(tktArq);
   } catch (error) {
       console.error(error);
-      res.status(500).json({ error: 'Erro ao criar relacionamento entre arquivo e evento' });
+      res.status(500).json({ error: 'Erro ao criar relacionamento entre arquivo e ticket' });
   }
 }
