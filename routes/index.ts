@@ -9,6 +9,7 @@ import { createEquipe, getEquipeById, getEquipes } from "../controllers/equipeCo
 import { createArquivo, getArquivo, getArquivoById } from "../controllers/arquivoController";
 import { createEvtArq, getEvtArq } from "../controllers/evtArqController";
 import { createTktArq, getTktArq } from "../controllers/ticketArquivoController";
+import { createUserEq, getUserEq } from "../controllers/userEquipeController";
 
 const router = Router();
 
@@ -61,5 +62,8 @@ router.post("/evtarq", createEvtArq);
 router.get("/tktarq", getTktArq);
 router.post("/tktarq", createTktArq);
 
+//Rotas UserEq
+router.get("/usreq", getUserEq);
+router.post("/usreq", createUserEq);
 
 export default router;
