@@ -18,7 +18,7 @@ export const getTicketsByUser = async (req: Request, res: Response): Promise<voi
     try {
         const tickets = await Ticket.findAll({
             where: {
-                UserId: UserId,
+                userUsername: UserId,
             }
         })
         res.status(200).json(tickets);
