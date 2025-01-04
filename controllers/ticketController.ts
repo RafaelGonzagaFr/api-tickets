@@ -26,7 +26,21 @@ export const getTicketsByUser = async (req: Request, res: Response): Promise<voi
         console.error(error);
         res.status(500).json({ error: 'Erro ao achar tickets' });
     }
+}
 
+export const getTicketsByEquipe = async (req: Request, res: Response): Promise<void> => {
+    const EquipeId = req.params.id;
+    try {
+        const tickets = await Ticket.findAll({
+            where: {
+                equipeId: EquipeId,
+            }
+        })
+        res.status(200).json(tickets);
+    } catch (error){
+        console.error(error);
+        res.status(500).json({ error: 'Erro ao achar tickets' });
+    }
 }
 
 export const createTicket = async (req: Request, res: Response): Promise<void> => {
