@@ -13,6 +13,10 @@ export const getTickets = async (req: Request, res: Response): Promise<void> => 
     }
 };
 
+//getTickets Top x
+
+//getTickets de tanto pra tanto (paginação)
+
 export const getTicketsByUser = async (req: Request, res: Response): Promise<void> => {
     const UserId = req.params.id;
     try {
@@ -28,6 +32,8 @@ export const getTicketsByUser = async (req: Request, res: Response): Promise<voi
     }
 
 }
+
+//getTicketsById retornar tasks juntos  TUDO relacionado
 
 export const createTicket = async (req: Request, res: Response): Promise<void> => {
     const { title, description, UserId } = req.body;
